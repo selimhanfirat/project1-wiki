@@ -1,2 +1,16 @@
-{{article_name}}
-{{article_content|safe}}
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+
+    <h1>{{article_name|safe}}</h1>
+    {{article_content|safe}}
+    <form action="{% url 'edit_article' article_name=article_name %}" method="post">
+        {% csrf_token %}
+        <button class="btn btn-primary" type="submit">Edit Article</button>
+    </form>
+
+{% endblock %}

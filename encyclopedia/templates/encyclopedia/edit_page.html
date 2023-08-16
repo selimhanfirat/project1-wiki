@@ -1,0 +1,35 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Edit {{ article_name }} Article
+{% endblock %}
+
+{% block body %}
+    <form action="{% url 'save_edited_article' article_name=article_name %}" method="post">
+        <div class="container">
+            {% csrf_token %}
+            <div class="row mb-3">
+                <h3> Edit {{ article_name }} Article </h3>
+            </div>
+            <div class="row">
+                <h5>Article Content Here</h5> 
+            </div>
+
+            <div class="row mb-3">
+                <textarea class="" name="content" cols="30" rows="10">{{ content }}</textarea>
+            </div>
+
+            <div class="row">
+                <button class="btn submit-btn btn-outline-primary" type="submit">Save Changes</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}
+
+
+
+
+
+
+
+

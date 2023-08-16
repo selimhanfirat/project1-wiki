@@ -13,8 +13,8 @@ h1 {
 }
 
 textarea {
-    height: 90vh;
-    width: 80%;
+    height: 30vh;
+    width: 60%;
 }
 
 .main {
@@ -35,4 +35,12 @@ textarea {
 
 .sidebar h2 {
     margin-top: 5px;
+}
+
+.submit-btn {
+    width: 15%;
+}
+
+#error_message{
+    color:red;
 }

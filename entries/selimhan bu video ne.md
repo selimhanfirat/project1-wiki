@@ -1,0 +1,3 @@
+kendime wikipedia yaptım
+
+**İNANILMAZIM**

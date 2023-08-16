@@ -6,11 +6,35 @@
 
 {% block body %}
     
+    <h1>Create a new page</h1>
     <form action="{% url 'new_page' %}" method = "post">
-        {% csrf_token %}
-        <input type="text" name="article_name">
-        <textarea name="content" cols="30" rows="10"></textarea>
-        <input type="submit">
+        <div class="container">
+            <div class= row>
+                <h5 id="error_message">
+                    {{error_message}}
+                </h5>
+            </div>
+            <div class="row">
+                <h5>Article Name</h5>
+            </div>
+
+            <div class="row mb-3">
+                {% csrf_token %}
+                <input ty
+                pe="text" name="article_name">
+            </div>
+            <div class="row">
+                <h5>Article Content Here</h5> 
+            </div>
+
+            <div class="row mb-3">
+                <textarea name="content" cols="30" rows="10"></textarea>
+            </div>
+
+            <div class="row">
+                <input class = "submit-btn btn btn-outline-primary" type="submit">
+            </div>
+        </div>
     </form>
 
 {% endblock %}
