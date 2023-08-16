@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect, Http404
 from django.urls import reverse
 import markdown2
+from random import choice
 from . import util
 
 template_name = "encyclopedia/article.html"
@@ -21,13 +22,19 @@ def new_page(request):
     return render(request, "encyclopedia/new_page.html")
 
 
-
-
 def article(request, article_name):
     content = util.get_entry(article_name)
     if content == None:
         raise Http404("Page not found")
     
+    return render(request, template_name, {
+        "article_content": markdown2.markdown(content),
+        "article_name": article_name   
+    })
+    
+def random(request):
+    article_name = choice(util.list_entries())
+    content = util.get_entry(article_name)
     return render(request, template_name, {
         "article_content": markdown2.markdown(content),
         "article_name": article_name   
