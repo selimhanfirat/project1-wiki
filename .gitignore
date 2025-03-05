@@ -1,0 +1,35 @@
+# Byte-compiled / compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+
+# Django logs
+*.log
+
+# SQLite database
+*.sqlite3
+
+# Django migration files
+*/migrations/*
+!*/migrations/__init__.py
+
+# Media and static files
+/media/
+/static/
+
+# IDE/editor specific files
+.vscode/
+*.swp
+*.swo
+.idea/
+*.iml
+
+# MacOS specific files
+.DS_Store
+
+# Environment variables
+.env
+*.env
